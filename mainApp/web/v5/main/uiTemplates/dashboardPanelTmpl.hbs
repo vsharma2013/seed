@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="content-frame-top">                        
+	    <div class="page-title">                    
+	        <h2>{{name}} : {{description}}</h2>
+	    </div>                    
+	</div>
+</div>
+
+<div class="row">
+	{{#each panels}}
+		{{#ifCond timeField '==' ''}}
+		<div class="col-md-4 class_{{id}}">
+		</div>
+		{{else}}
+		<div class="col-md-8 class_{{id}}">
+		</div>
+		{{/ifCond}}
+	{{/each}}
+</div>

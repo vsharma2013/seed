@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-3 dummyAddDataSet">
+      <div class="widget widget-default widget-item-icon">
+          <div class="widget-item-left">
+              <span class="fa fa-plus-square"></span>
+          </div>                             
+          <div class="widget-data">
+               <div class="widget-label num-count">&nbsp;</div>
+              <div class="widget-title">Add DataSet</div>
+              <div class="widget-subtitle">Click to add dataset</div>
+          </div>      
+          <div class="widget-controls">                                
+          </div>
+      </div>
+    </div>
+  {{#each datasets}}
+  <div class="col-md-3 dummyDataSetCont" data-id="{{id}}">
+    <div class="widget widget-default widget-item-icon">
+        <div class="widget-item-left">
+            {{#ifCond state '==' 1}}
+            <span class="fa fa-cloud-upload"></span>
+            {{else ifCond state '==' 2}}
+             <span class="fa fa-folder-open-o"></span>
+            {{else ifCond state '==' 3}}
+             <span class="fa fa-cog fa-spin"></span>
+             {{else ifCond state '==' 4}}
+             <span class="fa fa-search"></span>
+            {{else}}
+             <span class="fa fa-search"></span>
+            {{/ifCond}}
+        </div>                             
+        <div class="widget-data">
+            <div class="widget-label num-count">&nbsp;</div>
+            <div class="widget-title">{{name}}</div>
+            <div class="widget-subtitle">{{description}}</div>
+            {{#ifCond state '==' 1}}
+            <div class="widget-subtitle">Click to upload data</div>
+            {{else ifCond state '==' 2}}
+             <div class="widget-subtitle">Click to process data</div>
+            {{else ifCond state '==' 3}}
+            <div class="widget-subtitle">{{fileName}}</div>
+            <div class="widget-subtitle">Processing.... Please wait.</div>
+             {{else ifCond state '==' 4}}
+             <div class="widget-subtitle">{{fileName}}</div>
+            <div class="widget-subtitle">Dataset is ready for search. Start searching.</div>
+            {{else}}
+            <div class="widget-subtitle">{{fileName}}</div>
+             <div class="widget-subtitle">Click to search</div>
+            {{/ifCond}}
+            
+        </div>      
+        <div class="widget-controls">
+          {{#ifCond state '==' 5}}
+             <a data-id="{{id}}" class="widget-control-right widget-remove dummyDataSetEdit" title="Edit Hierarchy" style="right:40px" data-placement="top"><span class="fa fa-pagelines"></span></a>
+          {{/ifCond}}
+            <a class="widget-control-right widget-remove dummyRemoveDataSet" data-id="{{id}}" data-toggle="tooltip" data-placement="top" title="Remove Dataset"><span class="fa fa-times"></span></a>
+        </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+ 

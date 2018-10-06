@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="row col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Current DataSet : {{dataset.name}}</h3>
+                    <div class="pull-right">
+                        <button class="btn btn-default content-queries-left-toggle"><span class="fa fa-bars"></span></button>
+                    </div>                                     
+                </div>
+                <div class="panel-body list-group content-queries-left">
+                	{{#each queries}}
+                    	<a href="#app/search/{{dataId}}/{{id}}" class="list-group-item"><span class="fa fa-bar-chart-o"></span> {{queryStr}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+		
+		<div class="col-md-9">
+			<div class="panel panel-default" style="margin-bottom: 10px;">
+		        <div class="panel-body panel-body-search">
+		            <div class="input-group">
+		                <span class="input-group-addon dummySearchButtonCtrl"><span class="fa fa-search"></span></span>
+		                <input type="text" class="form-control dummySearchTextCtrl" placeholder="Search..."/>
+		             </div>
+	            </div>                                                           
+	        </div>
+	        <div class="row" style="margin-bottom: 10px;">
+	        	<div class="line-height-30 dummySearchResultsText"></div>
+	        	<div class="line-height-30 dummySearchErrorText"></div>
+	        </div> 
+	        <div class="row dummySearchDisplayCont">
+
+			</div>
+
+	        <div class="page-content-wrap">
+	        	<div class="row">
+		        	<div class="col-md-3">
+		        	</div>
+		        	<div class="col-md-6 dummySearchPieCont">
+		        	</div>
+		        	<div class="col-md-3">
+		        	</div>
+		        </div>
+
+		        <div class="row dummySearchTimelineCont">
+		        </div>
+	        </div>
+    	</div>
+	</div>
+<div>

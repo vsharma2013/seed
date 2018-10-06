@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-3 dummyDashboardAdd">
+        <div class="widget widget-default widget-item-icon">
+            <div class="widget-item-left">
+                <span class="fa fa-plus-square"></span>
+            </div>                             
+            <div class="widget-data">
+                <div class="widget-label num-count">&nbsp;</div>
+                <div class="widget-title">Add Dashboard</div>
+                <div class="widget-subtitle">Click to add dashboard</div>
+                
+            </div> 
+        </div>
+    </div>
+  {{#each dashboards}}
+    <div class="col-md-3 dummyDashboardCont" data-id="{{id}}">
+        <div class="widget widget-default widget-item-icon">
+            <div class="widget-item-left">
+                <span class="fa fa-desktop"></span>
+            </div>                             
+            <div class="widget-data">
+                <div class="widget-label num-count">&nbsp;</div>
+                <div class="widget-title">{{name}}</div>
+                <div class="widget-subtitle">{{description}}</div>
+                <div class="widget-subtitle">Click to open dashboard</div>
+            </div>      
+            <div class="widget-controls">
+
+                <a data-id="{{id}}" class="widget-control-right widget-remove dummyDashboardEdit" title="Edit" style="right:40px" data-placement="top" title="Edit Dashboard"><span class="fa fa-edit"></span></a>
+
+                <a data-id="{{id}}" class="widget-control-right widget-remove dummyDashboardRemove" title="Remove" data-placement="top" title="Remove Dashboard"><span class="fa fa-times"></span></a>
+
+            </div>
+        </div>
+    </div>
+  {{/each}}
+ </div>
+
+{{#ifCond isSharedDashboard "==" 1}}
+<div class="page-title">
+    <h2>
+        <span class="fa fa-share-square">
+         Shared Dashboards 
+        </span>
+    </h2>
+</div>
+<div class="row">
+  {{#each sharedDashboards}}
+    <div class="col-md-3 dummyDashboardCont" data-id="{{dashboard.id}}">
+        <div class="widget widget-default widget-item-icon">
+            <div class="widget-item-left">
+                <span class="fa fa-bookmark"></span>
+            </div>                             
+            <div class="widget-data">
+                <div class="widget-label num-count">&nbsp;</div>
+                <div class="widget-title">{{dashboard.name}}</div>
+                <div class="widget-subtitle">{{dashboard.description}}</div>
+                <div class="widget-subtitle">Shared by: {{userName}}</div>
+            </div>
+        </div>
+    </div>
+  {{/each}}
+ </div>
+ {{/ifCond}}

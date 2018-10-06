@@ -1,0 +1,131 @@
+<div class="modal fade hierarchyModel" id="hierarchyEditModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="page-container">
+                    <div class="page-content">
+                 <!-- START CONTENT FRAME -->
+                    <div class="content-frame">   
+                        
+                        <!-- START CONTENT FRAME TOP -->
+                        <div class="row content-frame-top">                        
+                            <div class="page-title">                    
+                                <h2><span class="fa fa-image"></span> DataSet</h2>
+                            </div>                                      
+                            <div class="pull-right"> 
+                                <button class="btn btn-primary dummyHierarchyChangesSave" aria-hidden="true">Save Changes</button>                           
+                                <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">X</button>
+                                <button class="btn btn-default content-frame-right-toggle"><span class="fa fa-bars"></span></button>
+                            </div>                         
+                        </div>
+                            
+                        <!-- START CONTENT FRAME RIGHT -->
+                        <div class="content-frame-right">               
+                            <h4>DataTypes:</h4>
+                            
+                            <div class="list-group border-bottom push-down-20">
+                                <a href="#" class="list-group-item active"> Strings </a>
+                                {{#each headers}}
+                                    {{#ifCond type '==' 1}}
+                                        <a class="list-group-item">{{header}}</a>
+                                    {{/ifCond}}
+                                {{/each}}
+                            </div>
+                            
+                            <div class="list-group border-bottom push-down-20">
+                                <a href="#" class="list-group-item active"> Number </a>
+                                 {{#each headers}}
+                                    {{#ifCond type '==' 2}}
+                                        <a class="list-group-item">{{header}}</a>
+                                    {{/ifCond}}
+                                {{/each}}
+                            </div>
+
+                            <div class="list-group border-bottom push-down-20">
+                                 <a href="#" class="list-group-item active"> Date </a>
+                                 {{#each headers}}
+                                    {{#ifCond type '==' 3}}
+                                        <a class="list-group-item">{{header}}</a>
+                                    {{/ifCond}}
+                                {{/each}}
+                            </div>                                                 
+                            
+                        </div>
+                        <!-- END CONTENT FRAME RIGHT -->
+                    
+                        <!-- START CONTENT FRAME BODY -->
+                        <div class="row content-frame-body content-frame-body-left dummyLeftContainer">
+                            <form class="form-horizontal" style="display:none;">
+                                  <div class="col-md-12">
+                                    <div class="panel-body">                                                                        
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">Name</label>
+                                            <div class="col-md-6 col-xs-12">                                            
+                                                <div>
+                                                    <input type="text" class="form-control dummyDataSetName" placeholder="Please add Dataset name" value="{{name}}"/>
+                                                </div>                                            
+                                            </div>
+                                        </div>
+
+                                         <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">Description</label>
+                                            <div class="col-md-6 col-xs-12">                                            
+                                                <div>
+                                                    <input type="text" class="form-control dummyDataSetDescription" placeholder="Please add Dataset Description" value="{{description}}"/>
+                                                </div>                                            
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">Data File</label>
+                                            {{#ifCond fileName '==' '' }}
+                                            <div class="col-md-8 col-xs-12 dummyFileUploadCont">
+                                                <input id="datasetFile" type="file" class="file-loading">
+                                                <div id="errorBlock" class="help-block"></div>             
+                                                <span class="help-block">Upload data .csv file.</span>
+                                            </div>
+                                            <div class="col-md-6 col-xs-12 dummyFileSuccessCont" style="display:none">
+                                                <span class="help-block">Upload Sucess:<span class="dummyFileNameText"></span></span>
+                                                <span class="help-block">Click process file.</span>
+                                            </div>
+                                            {{else}}
+                                            <div class="col-md-6 col-xs-12">
+                                                <span class="help-block">{{fileName}}</span>
+                                            </div>
+                                            {{/ifCond}}
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+
+                            <div class="pull-left push-up-10" style="display:none;">
+                                <button class="btn btn-primary btn-rounded dummyEditCtrl dummyPreviewHierarchyBtn"><span class="fa fa-pencil"></span>Preview</button>
+                                <button class="btn btn-success btn-rounded dummyPreviewCtrl dummyEditHierarchyBtn"> <span class="fa fa-edit"></span>Edit</button>
+                            </div>
+                            <div class="pull-left push-up-10 dummyEditCtrl">
+                                    <div class="btn-group">
+                                        <button title="Cut" class="btn btn-primary dummyHierarchyTreeCut"><span class="fa fa-cut"></span></button>
+                                        <button title="Copy" class="btn btn-primary dummyHierarchyTreeCopy"><span class="fa fa-copy"></span></button>
+                                        <button title="Paste" class="btn btn-primary dummyHierarchyTreePaste"><span class="fa fa-paste"></span> </button>
+                                        <button title="Delete" class="btn btn-primary  dummyHierarchyTreeDelete"><span class="fa fa-eraser"></span></button> 
+                                     </div>                     
+                            </div>
+                            
+                            <div class="col-md-12 dummyHierarchyPreviewTreeCont dummyPreviewCtrl" style="height:100%;padding-top:10px;display:none;">
+                                 <div id="tree-container">
+                                 </div>
+                            </div>
+                            <div class="col-md-12 dummyHierarchyEditTreeCont dummyEditCtrl" style="height:100%;padding-top:10px;display:none;">
+                                 <div class="dummyHierarchyEditcontainer">
+                                 </div>
+                            </div>
+                        </div>       
+                        <!-- END CONTENT FRAME BODY -->
+                    </div>               
+                    <!-- END CONTENT FRAME -->
+                                    
+                    
+                </div>            
+                <!-- END PAGE CONTENT -->
+            </div>
+            <!-- END PAGE CONTAINER -->
+        
+</div>

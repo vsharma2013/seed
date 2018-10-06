@@ -1,0 +1,11 @@
+<div class="col-md-12">                                                                         
+    <div class="btn-group btn-group-lg">
+    	{{#each displays}}
+    		{{#ifCond isSelected '==' 1}}
+    			<a href="#app/search/{{dataId}}/{{qId}}/{{display}}" class="btn btn-info">{{display}}</a>
+    		{{else}}
+        		<a href="#app/search/{{dataId}}/{{qId}}/{{display}}" class="btn btn-default">{{display}}</a>
+        	{{/ifCond}}
+        {{/each}}                                        
+    </div>      
+</div>

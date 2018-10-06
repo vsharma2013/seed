@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <!-- META SECTION -->
+        <title>Seed</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- END META SECTION -->
+        
+        <!-- CSS INCLUDE --> 
+        <!--start DEV CSS imports--> 
+        <link rel="stylesheet" type="text/css" href="./main/css/svg.css"/>
+        <link rel="stylesheet" type="text/css" href="./libCSS/theme-default.css"/>
+        <!--end DEV CSS imports-->
+
+          <!--start PROD CSS imports
+        <link rel="stylesheet" type="text/css" href="./css/seed.min.css?v={{CSStoken}}"/>
+        end PROD CSS imports-->
+        <!-- EOF CSS INCLUDE -->                                    
+    </head>
+    <body>
+        <!-- START PAGE CONTAINER -->
+        <div class="page-container page-navigation-top">
+             <!-- PAGE CONTENT -->
+            <div class="page-content">
+                <!-- START X-NAVIGATION VERTICAL -->
+                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                    <!-- TOGGLE NAVIGATION -->
+                   <li class="xn-logo">
+                        <a>GeekTree</a>
+                        <a href="#" class="x-navigation-control"></a>
+                    </li>
+
+                    <li class="dummyTab dummyDataSetsTab active">
+                        <a href="#app/1"><span class="fa fa-files-o"></span> <span class="xn-text">DataSets</span></a>
+                    </li>
+                    <li class="dummyTab dummyDashboardTab">
+                        <a href="#app/2"><span class="fa fa-cogs"></span> <span class="xn-text">Dashboards</span></a>
+                     </li>
+
+                     <script id="search-tabs-template" type="text/x-handlebars-template">
+                        <li class="dummyTab dummySearchPanel dummySearchtab">
+                            <a href="{{url}}"><span class="fa fa-search"></span> <span class="xn-text">Search</span></a>
+                         </li>
+                     </script>
+
+                     <script id="tabs-template" type="text/x-handlebars-template">
+                        <li class="xn-openable dummyTab dummyDashboardPanel {{id}}_tab">
+                            <a href="#app/{{tabType}}/{{id}}"><span class="fa fa-bar-chart-o"></span> <span class="xn-text">{{name}}</span></a>
+                         </li>
+                     </script>
+                    
+                    <!-- END TOGGLE NAVIGATION -->
+                    <!-- SIGN OUT -->
+                    <li class="xn-icon-button pull-right dummySignOutCont">
+                        <a class="mb-control dummyLogoutButton" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                    </li> 
+                    <!-- END SIGN OUT -->
+                </ul>
+                <!-- END X-NAVIGATION VERTICAL --> 
+                <!--
+                <div class="page-title">                    
+                    <h2><span class="fa fa-arrow-circle-o-left"></span> Navigation Top</h2>
+                </div>  --> 
+
+                <!-- PAGE CONTENT WRAPPER -->
+                <div class="page-content-wrap mainContainer">
+                     
+                </div>
+            </div>
+        </div>
+        <!-- MESSAGE BOX-->
+        <div class="message-box animated fadeIn" id="mb-signout">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                    <div class="mb-content">
+                        <p>Are you sure you want to log out?</p>                    
+                        <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <a class="btn btn-success btn-lg dummyLogoutYesButton">Yes</a>
+                            <button class="btn btn-default btn-lg mb-control-close dummyLogoutNoClose">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- success -->
+        <div class="message-box message-box-success animated fadeIn" id="message-box-success">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-check"></span> Success</div>
+                    <div class="mb-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at tellus sed mauris mollis pellentesque nec a ligula. Quisque ultricies eleifend lacinia. Nunc luctus quam pretium massa semper tincidunt. Praesent vel mollis eros. Fusce erat arcu, feugiat ac dignissim ac, aliquam sed urna. Maecenas scelerisque molestie justo, ut tempor nunc.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <button class="btn btn-default btn-lg pull-right mb-control-close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end success -->
+        
+        <!-- warning -->
+        <div class="message-box message-box-warning animated fadeIn" id="message-box-warning">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-warning"></span> Warning</div>
+                    <div class="mb-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at tellus sed mauris mollis pellentesque nec a ligula. Quisque ultricies eleifend lacinia. Nunc luctus quam pretium massa semper tincidunt. Praesent vel mollis eros. Fusce erat arcu, feugiat ac dignissim ac, aliquam sed urna. Maecenas scelerisque molestie justo, ut tempor nunc.</p>                  
+                    </div>
+                    <div class="mb-footer">
+                        <button class="btn btn-default btn-lg pull-right mb-control-close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end danger -->
+        
+        <!-- info -->
+        <div class="message-box message-box-info animated fadeIn" id="message-box-information">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-info"></span> Information</div>
+                    <div class="mb-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at tellus sed mauris mollis pellentesque nec a ligula. Quisque ultricies eleifend lacinia. Nunc luctus quam pretium massa semper tincidunt. Praesent vel mollis eros. Fusce erat arcu, feugiat ac dignissim ac, aliquam sed urna. Maecenas scelerisque molestie justo, ut tempor nunc.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <button class="btn btn-default btn-lg pull-right mb-control-close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end info -->
+        
+        <!-- danger -->
+        <div class="message-box message-box-danger animated fadeIn" id="message-box-error">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-times"></span> Danger</div>
+                    <div class="mb-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at tellus sed mauris mollis pellentesque nec a ligula. Quisque ultricies eleifend lacinia. Nunc luctus quam pretium massa semper tincidunt. Praesent vel mollis eros. Fusce erat arcu, feugiat ac dignissim ac, aliquam sed urna. Maecenas scelerisque molestie justo, ut tempor nunc.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <button class="btn btn-default btn-lg pull-right mb-control-close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="suggestions-container">
+            <ul class="suggestions-list">
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+                <li class="suggestion"></li>
+            </ul>
+        </div>
+        <!--start DEV imports--> 
+        <script src="./Fixtures/dataJson.js"></script>
+
+        <script src="./libsJS/jquery-2.1.4.min.js"></script>
+        <script src="./libsJS/bootstrap/js/bootstrap.min.js"></script>
+        <script src="./libsJS/handleBar/handlebars-v4.0.5.js"></script>
+        <script src="./libsJS/routie/routie.js"></script>
+        <script src="./libsJS/d3.min.js"></script>
+        <script src="./libsJS/fileupload/fileinput.min.js"></script>
+        <script src="./libsJS/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="./libsJS/underscore-min.js"></script>
+        <script src="./libsJS/tagsinput/jquery.tagsinput.min.js"></script>
+        <script src="./libsJS/nvd3/nv.d3.min.js"></script>
+        <script src="./libsJS/bootstrap-confirmation/bootstrap-confirmation.js"></script>
+         <script src="./libsJS/jstree/jstree.min.js"></script>
+
+        <script type='text/javascript' src='./libsJS/noty/packaged/jquery.noty.packaged.min.js'></script>
+    
+        <script src="./main/js/hbUtils/hbUtils.js"></script>
+        
+
+        <script src="./main/js/utils/responseParser.js"></script>
+        <script src="./main/js/utils/messages.js"></script>
+        <script src="./main/js/utils/utils.js"></script>
+        <script src="./main/js/utils/serviceRouter.js"></script>
+        <script src="./main/js/querySuggester/suggestionBuilder.js"></script>
+        <script src="./main/js/querySuggester/queryParser.js"></script>
+        <script src="./main/js/querySuggester/querySuggester.js"></script>
+
+
+        <script src="./uiLib/common/uiComponentsDictionary.js"></script>
+        <script src="./uiLib/charts/SimpleLineChart/simpleLineChart.js"></script>
+        <script src="./uiLib/charts/SimpleLineChart/simpleLineModel.js"></script>
+        <script src="./uiLib/charts/cummLineChart/cummLineChart.js"></script>
+        <script src="./uiLib/charts/cummLineChart/cummLineModel.js"></script>
+        <script src="./uiLib/charts/barChart/barChartNew.js"></script>
+        <script src="./uiLib/charts/barChart/barChartNewModel.js"></script>
+         <script src="./uiLib/charts/AreaChart/areaChart.js"></script>
+        <script src="./uiLib/charts/AreaChart/areaChartModel.js"></script>
+        <script src="./uiLib/charts/horBarChart/horBarChart.js"></script>
+        <script src="./uiLib/charts/horBarChart/horBarModel.js"></script>
+         <script src="./uiLib/charts/donutChart/donutModel.js"></script>
+        <script src="./uiLib/charts/donutChart/donutChart.js"></script>
+        <script src="./uiLib/charts/pieChart/pieChartModel.js"></script>
+        <script src="./uiLib/charts/pieChart/pieChart.js"></script>
+        <script src="./uiLib/charts/descreteBarChart/descreteBarModel.js"></script>
+        <script src="./uiLib/charts/descreteBarChart/descreteBarChart.js"></script>
+        <script src="./uiLib/charts/3dPie/3dPie.js"></script>
+        <script src="./uiLib/charts/lineChart/lineChart.js"></script>
+        <script src="./uiLib/charts/barChart/barChart.js"></script>
+        <script src="./uiLib/uiFactory.js"></script>
+        <script src="./uiLib/uiLib.js"></script>
+
+        
+        <script src="./widget/model/SalesTimeModel.js"></script>
+        <script src="./widget/model/SalesTableModel.js"></script>
+        <script src="./widget/model/ModelFactory.js"></script>
+        <script src="./widget/model/chartModel.js"></script>
+        <script src="./widget/ui/widgetFrame.js"></script>
+        <script src="./widget/widget.js"></script>
+
+        <script src="./main/js//model/userModel.js"></script>
+        <script src="./main/js/model/dataSetHierarchyModel.js"></script>
+        <script src="./main/js/model/queriesModel.js"></script>
+        <script src="./main/js/model/sharedDashboardsModel.js"></script>
+        <script src="./main/js/model/dashboardsModel.js"></script>
+        <script src="./main/js/model/dataSetsModel.js"></script>
+        <script src="./main/js/model/appModel.js"></script>
+        
+
+        <script src="./main/js/view/panelView.js"></script>
+        <script src="./main/js/view/search/pinPopupView.js"></script>
+        <script src="./main/js/view/search/searchDisplayView.js"></script>
+        <script src="./main/js/view/search/searchMainView.js"></script>
+        <script src="./main/js/view/dashboardPanelsView.js"></script>
+        <script src="./main/js/view/DataSetCrud/dataSetHierarchyEditor.js"></script>
+        <script src="./main/js/view/DataSetCrud/dataSetHierarchyView.js"></script>
+        <script src="./main/js/view/DashboardCrud/dashboardCrudView.js"></script>
+        <script src="./main/js/view/DataSetCrud/dataSetCrudView.js"></script>
+        <script src="./main/js/view/dataSetView.js"></script>
+        <script src="./main/js/view/dashboardsView.js"></script>
+        <script src="./main/js/view/appView.js"></script>
+
+
+        <script src="./main/js/controllers/searchCtrl.js"></script>
+        <script src="./main/js/controllers/dataSetsCtrl.js"></script>
+        <script src="./main/js/controllers/dashboardsCtrl.js"></script>
+        <script src="./main/js/controllers/mainCtrl.js"></script>
+        
+         
+         <script src="./main/js/routers/appRouter.js"></script>
+
+        
+         <script src="./main/main.js"></script>
+        <!--end DEV imports-->
+
+        <!--start PROD imports
+        <script src="./seed.min.js?v={{JStoken}}"></script>
+        end PROD imports-->
+    </body>
+</html>
